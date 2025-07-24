@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Основные страницы
+Allow: /index.html
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Запрещаем индексацию служебных файлов
+Disallow: /.htaccess
+Disallow: /package.json
+Disallow: /README.md
+Disallow: /DEPLOYMENT.md
+
+# Карта сайта
+Sitemap: https://barbershop-chillout.ru/sitemap.xml
+
+# Время задержки для ботов (в секундах)
+Crawl-delay: 1
+
+# Специальные правила для поисковых систем
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2

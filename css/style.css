@@ -1,0 +1,864 @@
+/* Сброс стилей и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.header {
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.brand {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.header-info {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.info-item .icon {
+    font-size: 1rem;
+}
+
+.info-item a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.info-item a:hover {
+    color: #3498db;
+}
+
+/* Лозунг */
+.hero {
+    background: #f8f9fa;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Фото Ивана с приветствием */
+.barber-intro {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.intro-photo {
+    flex: 0 0 300px;
+    overflow: hidden;
+}
+
+.intro-photo .barber-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-text h3 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.intro-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Рассказ о себе */
+.about {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about h3 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Портфолио */
+.portfolio {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.portfolio h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.portfolio-caption {
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    color: #666;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Кнопка записи */
+.booking {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.booking-content {
+    text-align: center;
+}
+
+.booking-button {
+    text-align: center;
+}
+
+.btn-booking {
+    display: inline-block;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
+}
+
+.btn-booking:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.4);
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+}
+
+/* Контактная информация */
+.contact-section {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.contact-section h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-item h4 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact-item a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: #3498db;
+}
+
+/* Футер */
+.footer {
+    background: #2c3e50;
+    color: #fff;
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-legal p {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    margin-bottom: 5px;
+}
+
+.footer-legal p:last-child {
+    margin-bottom: 0;
+}
+
+.footer-link {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright p {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-info {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .about h3,
+    .portfolio h3,
+    .contact-section h3 {
+        font-size: 2rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .intro-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .intro-photo {
+        flex: none;
+        max-width: 100%;
+        max-height: none;
+    }
+
+    .intro-text {
+        text-align: center;
+    }
+
+    .intro-text h3 {
+        font-size: 1.8rem;
+    }
+
+    .booking-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .about,
+    .portfolio,
+    .booking,
+    .contact-section {
+        padding: 60px 0;
+    }
+
+    .about h3,
+    .portfolio h3,
+    .contact-section h3 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contact-item {
+        padding: 20px;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .btn-booking {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+
+    .qr-code {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info-item {
+        font-size: 0.8rem;
+    }
+
+    .brand {
+        font-size: 1.6rem;
+    }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Утилиты */
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Стили для слайдеров */
+.photo-slider, .portfolio-slider, .place-slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+/* Специальные стили для слайдера Ивана */
+.barber-intro .slider-container {
+    height: 400px;
+}
+
+.barber-intro .slide {
+    height: 400px;
+}
+
+.barber-intro .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.barber-image, .portfolio-image, .place-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Кнопки навигации слайдера */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(44, 62, 80, 0.8);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover {
+    background: rgba(44, 62, 80, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn.prev {
+    left: 15px;
+}
+
+.slider-btn.next {
+    right: 15px;
+}
+
+/* Точки навигации для слайдера Ивана */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #bdc3c7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #2c3e50;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: #34495e;
+}
+
+/* Счетчик слайдов для портфолио и места */
+.slider-counter {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.current-slide {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Стили для секции фотографий места */
+.place-gallery {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.place-gallery h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+/* Специальные стили для слайдера места */
+.place-slider .slider-container {
+    height: 500px;
+}
+
+.place-slider .slide {
+    height: 500px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.place-slider .slide img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+}
+
+/* Адаптивность для слайдеров */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 60vh; /* Увеличиваем до 60% высоты экрана */
+        min-height: 400px;
+    }
+    
+    /* Специальные стили для слайдера Ивана на планшетах */
+    .barber-intro .slider-container {
+        height: 70vh; /* 70% высоты экрана для слайдера Ивана */
+        min-height: 450px;
+    }
+    
+    .barber-intro .slide {
+        height: 100%;
+    }
+    
+    .barber-intro .slide img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; /* Возвращаем cover для лучшего заполнения */
+        object-position: center;
+    }
+    
+    /* Специальные стили для слайдера места на планшетах */
+    .place-slider .slider-container {
+        height: 400px;
+    }
+    
+    .place-slider .slide {
+        height: 400px;
+    }
+    
+    .place-slider .slide img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+    }
+    
+    /* Вертикальный формат для портфолио слайдера на планшетах */
+    .portfolio-slider .slide img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .slider-btn.prev {
+        left: 10px;
+    }
+    
+    .slider-btn.next {
+        right: 10px;
+    }
+    
+    .place-gallery h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        height: 70vh; /* 70% высоты экрана на мобильных */
+        min-height: 350px;
+    }
+    
+    /* Специальные стили для слайдера Ивана на мобильных */
+    .barber-intro .slider-container {
+        height: 80vh; /* 80% высоты экрана для слайдера Ивана */
+        min-height: 400px;
+    }
+    
+    .barber-intro .slide {
+        height: 100%;
+    }
+    
+    .barber-intro .slide img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; /* Заполняем весь контейнер */
+        object-position: center;
+    }
+    
+    /* Специальные стили для слайдера места на мобильных */
+    .place-slider .slider-container {
+        height: 350px;
+        min-height: 300px;
+    }
+    
+    .place-slider .slide {
+        height: 350px;
+    }
+    
+    .place-slider .slide img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+    }
+    
+    /* Полноэкранный формат для портфолио слайдера на мобильных */
+    .portfolio-slider .slide img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .place-gallery {
+        padding: 60px 0;
+    }
+    
+    .place-gallery h3 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+}
+
+/* Анимация появления слайдов */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide.active {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Поддержка свайпов на мобильных устройствах */
+.slider-container {
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.photo-slider, .portfolio-slider, .place-slider {
+    touch-action: pan-y;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.slide img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}

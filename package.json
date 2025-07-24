@@ -1,0 +1,141 @@
+{
+  "name": "barbershop-chillout",
+  "version": "1.0.0",
+  "description": "Минималистичная посадочная страница для парикмахерской Barbershop Chillout (Иван, Тимашевск)",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server --port=8000 --open=/",
+    "dev": "npx live-server --port=3000 --open=/ --watch=css,js,index.html",
+    "build": "npm run minify-css && npm run minify-js && npm run optimize-images",
+    "minify-css": "npx clean-css-cli css/style.css -o css/style.min.css",
+    "minify-js": "npx terser js/script.js js/telegram-integration.js -o js/bundle.min.js --compress --mangle",
+    "optimize-images": "npx imagemin images/*.jpg images/*.png --out-dir=images/optimized",
+    "validate-html": "npx html-validate index.html",
+    "test-lighthouse": "npx lighthouse http://localhost:8000 --output=html --output-path=./lighthouse-report.html",
+    "deploy-netlify": "npx netlify deploy --prod --dir=.",
+    "deploy-surge": "npx surge . barbershop-chillout.surge.sh"
+  },
+  "keywords": [
+    "барбершоп",
+    "парикмахерская",
+    "Тимашевск",
+    "мужские стрижки",
+    "борода",
+    "Иван",
+    "Barbershop Chillout",
+    "landing page",
+    "статический сайт"
+  ],
+  "author": {
+    "name": "Barbershop Chillout",
+    "email": "info@barbershop-chillout.ru",
+    "url": "https://barbershop-chillout.ru"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/barbershop-chillout.git"
+  },
+  "homepage": "https://barbershop-chillout.ru",
+  "bugs": {
+    "url": "https://github.com/username/barbershop-chillout/issues",
+    "email": "support@barbershop-chillout.ru"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "html-validate": "^8.7.4",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "lighthouse": "^11.4.0",
+    "live-server": "^1.2.2",
+    "netlify-cli": "^17.10.1",
+    "surge": "^0.23.1",
+    "terser": "^5.26.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "config": {
+    "site_url": "https://barbershop-chillout.ru",
+    "telegram_bot": "@CHILLOUT_BARBER_bot",
+    "yandex_maps_api": "YOUR_API_KEY",
+    "contact": {
+      "phone": "+79181969212",
+      "address": "Пролетарская ул., 71, Тимашевск",
+      "schedule": "Пн–Вс 10:00–19:00"
+    }
+  },
+  "metadata": {
+    "business": {
+      "name": "Barbershop Chillout",
+      "owner": "Иван",
+      "experience": "18 лет",
+      "specialization": [
+        "Мужские стрижки",
+        "Моделирование бороды",
+        "Классический стиль",
+        "Современные тенденции"
+      ],
+      "location": {
+        "city": "Тимашевск",
+        "region": "Краснодарский край",
+        "country": "Россия"
+      }
+    },
+    "website": {
+      "type": "landing-page",
+      "framework": "vanilla-js",
+      "responsive": true,
+      "pwa": false,
+      "seo_optimized": true,
+      "performance_optimized": true
+    },
+    "features": [
+      "Минималистичный дизайн",
+      "Адаптивная верстка",
+      "Telegram интеграция",
+      "Яндекс Карты",
+      "QR-код для записи",
+      "Портфолио работ",
+      "SEO оптимизация",
+      "Быстрая загрузка"
+    ],
+    "integrations": {
+      "telegram": {
+        "bot": "@CHILLOUT_BARBER_bot",
+        "purpose": "Запись на услуги"
+      },
+      "maps": {
+        "provider": "Яндекс Карты",
+        "coordinates": [45.417, 38.933]
+      },
+      "analytics": {
+        "google": "optional",
+        "yandex": "optional"
+      }
+    }
+  },
+  "files": [
+    "index.html",
+    "css/",
+    "js/",
+    "images/",
+    "robots.txt",
+    "sitemap.xml",
+    ".htaccess"
+  ],
+  "directories": {
+    "css": "./css",
+    "js": "./js",
+    "images": "./images",
+    "docs": "./docs"
+  }
+}

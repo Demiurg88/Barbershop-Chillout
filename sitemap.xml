@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Главная страница -->
+    <url>
+        <loc>https://barbershop-chillout.ru/</loc>
+        <lastmod>2025-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        
+        <!-- Изображения для индексации -->
+        <image:image>
+            <image:loc>https://barbershop-chillout.ru/images/1ivan.jpg</image:loc>
+            <image:caption>Иван - топовый барбер Краснодарского края с 18-летним опытом</image:caption>
+            <image:title>Барбер Иван - Barbershop Chillout</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://barbershop-chillout.ru/images/qr-code.png</image:loc>
+            <image:caption>QR-код для записи через Telegram бот</image:caption>
+            <image:title>QR-код записи - Barbershop Chillout</image:title>
+        </image:image>
+        
+        <!-- Портфолио изображения -->
+        <image:image>
+            <image:loc>https://barbershop-chillout.ru/images/ivan1c7b25d9-3a61-49c3-be46-0ddfbea363ca.jpg</image:loc>
+            <image:caption>Пример работы барбера - мужская стрижка</image:caption>
+            <image:title>Портфолио работ - Barbershop Chillout</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://barbershop-chillout.ru/images/ivan05decda9-5770-4490-b669-7817e9e434b3.jpg</image:loc>
+            <image:caption>Пример работы барбера - стрижка и борода</image:caption>
+            <image:title>Портфолио работ - Barbershop Chillout</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://barbershop-chillout.ru/images/ivan32ecbe5d-5f6d-400c-91be-9510f031a1f5.jpg</image:loc>
+            <image:caption>Пример работы барбера - моделирование бороды</image:caption>
+            <image:title>Портфолио работ - Barbershop Chillout</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://barbershop-chillout.ru/images/ivan41b8e7a1-6aa0-434d-a0a2-cb22fce7f05e.jpg</image:loc>
+            <image:caption>Пример работы барбера - классическая стрижка</image:caption>
+            <image:title>Портфолио работ - Barbershop Chillout</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://barbershop-chillout.ru/images/ivan218e46e6-2cbf-4f6f-8094-c56f5f64080c.jpg</image:loc>
+            <image:caption>Пример работы барбера - современная стрижка</image:caption>
+            <image:title>Портфолио работ - Barbershop Chillout</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://barbershop-chillout.ru/images/ivan1380dfdd-07b1-4f23-87be-85841afb1583.jpg</image:loc>
+            <image:caption>Пример работы барбера - стрижка под машинку</image:caption>
+            <image:title>Портфолио работ - Barbershop Chillout</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://barbershop-chillout.ru/images/ivan00314836-cccf-4221-8c12-71ea5bb26cc6.jpg</image:loc>
+            <image:caption>Пример работы барбера - креативная стрижка</image:caption>
+            <image:title>Портфолио работ - Barbershop Chillout</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://barbershop-chillout.ru/images/ivanf22fc231-a546-4db1-a50c-72ebd5dc946a.jpg</image:loc>
+            <image:caption>Пример работы барбера - стильная стрижка</image:caption>
+            <image:title>Портфолио работ - Barbershop Chillout</image:title>
+        </image:image>
+    </url>
+    
+</urlset>

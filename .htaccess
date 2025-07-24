@@ -1,0 +1,138 @@
+# Barbershop Chillout - Apache Configuration
+# Оптимизация для скорости загрузки и SEO
+
+# Включаем сжатие GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Кэширование статических файлов
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Изображения
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    
+    # CSS и JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    
+    # HTML
+    ExpiresByType text/html "access plus 1 week"
+    
+    # Шрифты
+    ExpiresByType font/woff "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 month"
+    ExpiresByType application/font-woff "access plus 1 month"
+    ExpiresByType application/font-woff2 "access plus 1 month"
+</IfModule>
+
+# Заголовки кэширования
+<IfModule mod_headers.c>
+    # Кэширование изображений
+    <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+    
+    # Кэширование CSS и JS
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+    
+    # Безопасность
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # HTTPS принуждение (если используется SSL)
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# Перенаправления для SEO
+RewriteEngine On
+
+# Принуждение к HTTPS (раскомментировать при наличии SSL)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Удаление .html из URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Перенаправление с www на без www (или наоборот)
+RewriteCond %{HTTP_HOST} ^www\.barbershop-chillout\.ru [NC]
+RewriteRule ^(.*)$ https://barbershop-chillout.ru/$1 [L,R=301]
+
+# Главная страница по умолчанию
+DirectoryIndex index.html
+
+# Пользовательские страницы ошибок
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# Защита от hotlinking изображений
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?barbershop-chillout\.ru [NC]
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?google\. [NC]
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?yandex\. [NC]
+RewriteRule \.(jpg|jpeg|png|gif|svg)$ - [F]
+
+# Блокировка доступа к служебным файлам
+<Files ~ "^\.">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "package.json">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "README.md">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "DEPLOYMENT.md">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# MIME типы
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType image/svg+xml .svg
+    AddType application/font-woff .woff
+    AddType application/font-woff2 .woff2
+</IfModule>
+
+# Оптимизация для мобильных устройств
+<IfModule mod_setenvif.c>
+    SetEnvIf User-Agent ".*Mobile.*" mobile
+    SetEnvIf User-Agent ".*Android.*" mobile
+    SetEnvIf User-Agent ".*iPhone.*" mobile
+    SetEnvIf User-Agent ".*iPad.*" mobile
+</IfModule>
+
+# Предотвращение доступа к backup файлам
+<FilesMatch "\.(bak|backup|old|tmp)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
